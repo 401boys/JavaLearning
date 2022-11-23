@@ -1,0 +1,383 @@
+JFDML JFormDesigner: "8.0.0.0.194" Java: "17.0.4.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"title": "Twin-Calc"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "90, 90, 90, 90, 80, 90, 90, 90, 90"
+					"$rowSpecs": "100, 10, 60, 80, 80, 80, 80, 80"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "contentPanel"
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textField1"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridwidth": 4
+						"gridheight": 2
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textField2"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 5
+						"gridwidth": 4
+						"gridheight": 2
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textField3"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 2
+						"gridwidth": 4
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textField4"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 5
+						"gridy": 2
+						"gridwidth": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_AC"
+						"text": "AC"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 3
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_NOT"
+						"text": "+/-"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 15, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 3
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_Percent"
+						"text": "%"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 15, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 3
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_Div"
+						"text": "÷"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 3
+						"gridy": 3
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "Switch_L"
+						"text": "←"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 4
+						"gridy": 3
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_AC"
+						"text": "AC"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 5
+						"gridy": 3
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_NOT"
+						"text": "+/-"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 15, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 6
+						"gridy": 3
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_Percent"
+						"text": "%"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 15, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 7
+						"gridy": 3
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_Div"
+						"text": "÷"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 8
+						"gridy": 3
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_7"
+						"text": "7"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_8"
+						"text": "8"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_9"
+						"text": "9"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_Mul"
+						"text": "×"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 3
+						"gridy": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "Switch_R"
+						"text": "→"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 4
+						"gridy": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_7"
+						"text": "7"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 5
+						"gridy": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_8"
+						"text": "8"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 6
+						"gridy": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_9"
+						"text": "9"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 7
+						"gridy": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_Mul"
+						"text": "×"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 8
+						"gridy": 4
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_4"
+						"text": "4"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 5
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_5"
+						"text": "5"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 5
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_6"
+						"text": "6"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 5
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_Sub"
+						"text": "-"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 3
+						"gridy": 5
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_4"
+						"text": "4"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 5
+						"gridy": 5
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_5"
+						"text": "5"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 6
+						"gridy": 5
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_6"
+						"text": "6"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 7
+						"gridy": 5
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_Sub"
+						"text": "-"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 8
+						"gridy": 5
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_1"
+						"text": "1"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 6
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_2"
+						"text": "2"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 6
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_3"
+						"text": "3"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 6
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_Add"
+						"text": "+"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 3
+						"gridy": 6
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_1"
+						"text": "1"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 5
+						"gridy": 6
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_2"
+						"text": "2"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 6
+						"gridy": 6
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_3"
+						"text": "3"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 7
+						"gridy": 6
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_Add"
+						"text": "+"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 8
+						"gridy": 6
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_0"
+						"text": "0"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 7
+						"gridwidth": 2
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_Dot"
+						"text": "."
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 7
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "L_Equ"
+						"text": "="
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 3
+						"gridy": 7
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button22"
+						"text": "DEL"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 4
+						"gridy": 7
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_0"
+						"text": "0"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 10, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 5
+						"gridy": 7
+						"gridwidth": 2
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_Dot"
+						"text": "."
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 7
+						"gridy": 7
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "R_Equ"
+						"text": "="
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 8
+						"gridy": 7
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 865, 670 )
+		} )
+	}
+}
