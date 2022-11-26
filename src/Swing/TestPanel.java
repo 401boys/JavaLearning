@@ -22,27 +22,33 @@ public class TestPanel extends JFrame {
     }
 
     private void button1MouseClicked(MouseEvent e) {
-        Player player = new Player();
+        /*Player player = new Player();
         Pattern pattern1 = new Pattern("I106 C5 ");
         Pattern song = new Pattern();
         song.add(pattern1);
-        player.play(song);
+        player.play(song);*/
+        SoundUtil.sound("I106 C5");
+        textField1.setText("1");
     }
 
     private void button2MouseClicked(MouseEvent e) {
-        Player player = new Player();
+        /*Player player = new Player();
         Pattern pattern1 = new Pattern("I106 D5 ");
         Pattern song = new Pattern();
         song.add(pattern1);
-        player.play(song);
+        player.play(song);*/
+        SoundUtil.sound("I106 D5");
+        textField1.setText("2");
     }
 
     private void button3MouseClicked(MouseEvent e) {
-        Player player = new Player();
+       /* Player player = new Player();
         Pattern pattern1 = new Pattern("I106 E5 ");
         Pattern song = new Pattern();
         song.add(pattern1);
-        player.play(song);
+        player.play(song);*/
+        SoundUtil.sound("I106 E5");
+        textField1.setText("3");
     }
 
     private void initComponents() {
@@ -57,6 +63,7 @@ public class TestPanel extends JFrame {
         button6 = new JButton();
         button7 = new JButton();
         button8 = new JButton();
+        textField1 = new JTextField();
         buttonBar = new JPanel();
         okButton = new JButton();
 
@@ -142,6 +149,9 @@ public class TestPanel extends JFrame {
                 contentPanel.add(button8, new GridBagConstraints(7, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 0), 0, 0));
+                contentPanel.add(textField1, new GridBagConstraints(0, 1, 4, 1, 0.0, 0.0,
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
             }
             dialogPane.add(contentPanel, BorderLayout.CENTER);
 
@@ -179,6 +189,7 @@ public class TestPanel extends JFrame {
     private JButton button6;
     private JButton button7;
     private JButton button8;
+    private JTextField textField1;
     private JPanel buttonBar;
     private JButton okButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
