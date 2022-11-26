@@ -68,7 +68,7 @@ public class CalcPanel extends JFrame {
 
         //======== this ========
         setTitle("Twin-Calc");
-        var contentPane = getContentPane();
+        Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
         //======== dialogPane ========
