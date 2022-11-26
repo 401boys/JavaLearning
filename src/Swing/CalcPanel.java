@@ -4,7 +4,10 @@
 
 package Swing;
 
+import Util.CalcUtil;
+
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -12,8 +15,28 @@ import javax.swing.border.*;
  * @author B20040628
  */
 public class CalcPanel extends JFrame {
+    Calculator c1;
+    Calculator c2;
+
     public CalcPanel() {
+        c1 = new Calculator();
+        c2 = new Calculator();
         initComponents();
+    }
+
+    private void L_0MouseClicked(MouseEvent e) {
+        // TODO add your code here
+        //c1.downStr.append("0");
+        CalcUtil.addNumber(c1, "0");
+        textField1.setText(c1.upStrB.toString());
+    }
+
+    private void L_EquMouseClicked(MouseEvent e) {
+        // TODO add your code here
+        CalcUtil.addSymbol(c1, "=");
+        textField1.setText(c1.upStrB.toString());
+
+
     }
 
     private void initComponents() {
@@ -337,6 +360,12 @@ public class CalcPanel extends JFrame {
                 //---- L_0 ----
                 L_0.setText("0");
                 L_0.setFont(L_0.getFont().deriveFont(L_0.getFont().getSize() + 10f));
+                L_0.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_0MouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_0, new GridBagConstraints(0, 7, 2, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));
@@ -351,6 +380,12 @@ public class CalcPanel extends JFrame {
                 //---- L_Equ ----
                 L_Equ.setText("=");
                 L_Equ.setFont(L_Equ.getFont().deriveFont(L_Equ.getFont().getStyle() | Font.BOLD, L_Equ.getFont().getSize() + 20f));
+                L_Equ.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_EquMouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_Equ, new GridBagConstraints(3, 7, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 5), 0, 0));

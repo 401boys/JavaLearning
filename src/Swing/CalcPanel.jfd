@@ -1,4 +1,4 @@
-JFDML JFormDesigner: "8.0.0.0.194" Java: "17.0.4.1" encoding: "UTF-8"
+JFDML JFormDesigner: "8.0.0.0.194" Java: "11.0.15" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
@@ -316,6 +316,7 @@ new FormModel {
 						name: "L_0"
 						"text": "0"
 						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "L_0MouseClicked", true ) )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridy": 7
 						"gridwidth": 2
@@ -332,6 +333,7 @@ new FormModel {
 						name: "L_Equ"
 						"text": "="
 						"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "L_EquMouseClicked", true ) )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 3
 						"gridy": 7
