@@ -4,9 +4,7 @@
 
 package Swing;
 
-import Util.RelayUtil;
 import Util.WAVUtil;
-import Util.SoundUtil;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -275,7 +273,7 @@ public class TestPanel extends JFrame {
                 button8.setText("8");
                 button8.addMouseListener(new MouseAdapter() {
                     @Override
-                    public void mouseClicked(MouseEvent e) {
+                    public void mouseEntered(MouseEvent e) {
                         try {
                             button8MouseClicked(e);
                         } catch (MalformedURLException ex) {
