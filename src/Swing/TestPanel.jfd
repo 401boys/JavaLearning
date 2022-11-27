@@ -39,12 +39,14 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "button4"
 						"text": "4"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button4MouseClicked", true ) )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 3
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "button5"
 						"text": "5"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button5MouseClicked", true ) )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 4
 					} )
@@ -65,6 +67,12 @@ new FormModel {
 						"text": "8"
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 7
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "textField1"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 1
+						"gridwidth": 4
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "Center"

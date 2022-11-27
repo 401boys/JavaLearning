@@ -4,18 +4,23 @@
 
 package Swing;
 
+import Util.WAVUtil;
 import Util.SoundUtil;
-import org.jfugue.pattern.Pattern;
-import org.jfugue.player.Player;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.net.MalformedURLException;
 import javax.swing.*;
 import javax.swing.border.*;
 
 /**
+ *
  * @author B20040628
+ * @date 2022/11/26 17:34
  */
+
+
+
 public class TestPanel extends JFrame {
     public TestPanel() {
         initComponents();
@@ -51,6 +56,16 @@ public class TestPanel extends JFrame {
         textField1.setText("3");
     }
 
+    private void button4MouseClicked(MouseEvent e) throws MalformedURLException {
+        textField1.setText("4");
+        WAVUtil.wav();
+    }
+
+    private void button5MouseClicked(MouseEvent e) throws MalformedURLException {
+        textField1.setText("5");
+        WAVUtil.wav();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         dialogPane = new JPanel();
@@ -68,7 +83,7 @@ public class TestPanel extends JFrame {
         okButton = new JButton();
 
         //======== this ========
-        Container contentPane = getContentPane();
+        var contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
         //======== dialogPane ========
@@ -122,12 +137,14 @@ public class TestPanel extends JFrame {
 
                 //---- button4 ----
                 button4.setText("4");
+
                 contentPanel.add(button4, new GridBagConstraints(3, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- button5 ----
                 button5.setText("5");
+
                 contentPanel.add(button5, new GridBagConstraints(4, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 5, 5), 0, 0));
@@ -174,6 +191,26 @@ public class TestPanel extends JFrame {
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
+        button4.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    button4MouseClicked(e);
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        button5.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    button5MouseClicked(e);
+                } catch (MalformedURLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
