@@ -10,30 +10,35 @@ package Swing;
  * @Date 2022-11-26-18:48
  */
 public class Calculator {
-    public StringBuilder downStrB;
-    public StringBuilder upStrB;
+    public StringBuilder downStrBd;
+    public StringBuilder upStrBd;
+    //public StringBuilder downStrB = new StringBuilder();
+    //public StringBuilder upStrB = new StringBuilder();
 
-    public StringBuilder getDownStrB() {
-        return downStrB;
+    public StringBuilder getDownStrBd() {
+        return downStrBd;
     }
 
-    public void setDownStrB(StringBuilder downStrB) {
-        this.downStrB = downStrB;
+    public void setDownStrBd(StringBuilder downStrBd) {
+        this.downStrBd = downStrBd;
     }
 
-    public StringBuilder getUpStrB() {
-        return upStrB;
+    public StringBuilder getUpStrBd() {
+        return upStrBd;
     }
 
-    public void setUpStrB(StringBuilder upStrB) {
-        this.upStrB = upStrB;
+    public void setUpStrBd(StringBuilder upStrBd) {
+        this.upStrBd = upStrBd;
     }
 
     public Calculator() {
+        downStrBd = new StringBuilder(100);
+        upStrBd = new StringBuilder(100);
+        //upStrB.append("0");
     }
 
-    public Calculator(StringBuilder downStrB, StringBuilder upStrB) {
-        this.downStrB = downStrB;
-        this.upStrB = upStrB;
+    public Calculator(StringBuilder downStrBd, StringBuilder upStrBd) {
+        this.downStrBd = downStrBd;
+        this.upStrBd = upStrBd;
     }
 }

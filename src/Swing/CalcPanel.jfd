@@ -190,6 +190,7 @@ new FormModel {
 						name: "L_4"
 						"text": "4"
 						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "L_4MouseClicked", true ) )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridy": 5
 					} )
@@ -253,6 +254,7 @@ new FormModel {
 						name: "L_1"
 						"text": "1"
 						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "L_1MouseClicked", true ) )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridy": 6
 					} )
@@ -260,6 +262,7 @@ new FormModel {
 						name: "L_2"
 						"text": "2"
 						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "L_2MouseClicked", true ) )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 1
 						"gridy": 6
@@ -268,14 +271,18 @@ new FormModel {
 						name: "L_3"
 						"text": "3"
 						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "L_3MouseClicked", true ) )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 2
 						"gridy": 6
+						"vAlign": 5
+						"hAlign": 5
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "L_Add"
 						"text": "+"
 						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 20, false )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "L_AddMouseClicked", true ) )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 3
 						"gridy": 6
@@ -339,9 +346,10 @@ new FormModel {
 						"gridy": 7
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "button22"
+						name: "DEL"
 						"text": "DEL"
 						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "DELMouseClicked", true ) )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 4
 						"gridy": 7
