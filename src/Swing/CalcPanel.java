@@ -150,12 +150,12 @@ public class CalcPanel extends JFrame {
     }
 
     private void L_MulMouseClicked(MouseEvent e) {
-        addSymbol(c1, "*");
+        addSymbol(c1, "×");
         c1_Disp();
     }
 
     private void L_DivMouseClicked(MouseEvent e) {
-        addSymbol(c1, "/");
+        addSymbol(c1, "÷");
         c1_Disp();
     }
 

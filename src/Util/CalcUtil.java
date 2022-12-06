@@ -16,8 +16,8 @@ public class CalcUtil {
 
     static {
         inStackPri.put("#", 0);
-        inStackPri.put("*", 5);
-        inStackPri.put("/", 5);
+        inStackPri.put("×", 5);
+        inStackPri.put("÷", 5);
         inStackPri.put("+", 3);
         inStackPri.put("-", 3);
     }
@@ -26,8 +26,8 @@ public class CalcUtil {
 
     static {
         inComingPri.put("#", 0);
-        inComingPri.put("*", 4);
-        inComingPri.put("/", 4);
+        inComingPri.put("×", 4);
+        inComingPri.put("÷", 4);
         inComingPri.put("+", 2);
         inComingPri.put("-", 2);
     }
@@ -37,7 +37,7 @@ public class CalcUtil {
     public static String insetBlanks(String s) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '+' || s.charAt(i) == '-' || s.charAt(i) == '*' || s.charAt(i) == '/')
+            if (s.charAt(i) == '+' || s.charAt(i) == '-' || s.charAt(i) == '×' || s.charAt(i) == '÷')
                 result.append(" ").append(s.charAt(i)).append(" ");
             else
                 result.append(s.charAt(i));
@@ -87,10 +87,10 @@ public class CalcUtil {
             case "-":
                 stack_cal.push(b.subtract(a).toString());
                 break;
-            case "*":
+            case "×":
                 stack_cal.push(b.multiply(a).toString());
                 break;
-            case "/":
+            case "÷":
                 stack_cal.push(b.divide(a, 8, RoundingMode.HALF_UP).toString());
                 break;
         }
