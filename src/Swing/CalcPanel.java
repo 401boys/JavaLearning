@@ -18,7 +18,7 @@ import javax.swing.border.*;
 public class CalcPanel extends JFrame {
     Calculator c1;
     Calculator c2;
-    HashMap<Character, Boolean> numMap = new HashMap<>();
+
     boolean hasSymbol;
 
 
@@ -29,16 +29,6 @@ public class CalcPanel extends JFrame {
         c1_Disp();
         c2_Disp();
 
-        numMap.put('0', true);
-        numMap.put('1', true);
-        numMap.put('2', true);
-        numMap.put('3', true);
-        numMap.put('4', true);
-        numMap.put('5', true);
-        numMap.put('6', true);
-        numMap.put('7', true);
-        numMap.put('8', true);
-        numMap.put('9', true);
     }
 
     private void L_0MouseClicked(MouseEvent e) {
@@ -109,24 +99,25 @@ public class CalcPanel extends JFrame {
     }
 
     public void addNumber(Calculator c, String s) {
-        if (hasSymbol && isNum(c.downStrBd.charAt(c.downStrBd.length() - 1))) {
-        } else {
+        if (hasSymbol) {
             c.upStrBd = new StringBuilder(100);
-
         }
         c.upStrBd.append(s);
         c.downStrBd.append(s);
+
+        hasSymbol = false;
     }
 
-    private boolean isNum(char c) {
-        return numMap.get(c);
-    }
 
     public String addSymbol(Calculator c, String s) {
-        hasSymbol = true;
+        if (hasSymbol) {
+            c.downStrBd.deleteCharAt(c.downStrBd.length() - 1);
+        }
+
         String res = CalcUtil.expressionToValue(c.downStrBd.toString());
         c.downStrBd.append(s);
         c.upStrBd = new StringBuilder(res);
+        hasSymbol = true;
         return res;
     }
 
