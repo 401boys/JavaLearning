@@ -169,11 +169,11 @@ public class CalcPanel extends JFrame {
     }
 
     private void L_PercentMouseClicked(MouseEvent e) {
-        // TODO add your code here
     }
 
     private void L_DotMouseClicked(MouseEvent e) {
-        // TODO add your code here
+        addSymbol(c1, ".");
+        c1_Disp();
     }
 
     private void initComponents() {

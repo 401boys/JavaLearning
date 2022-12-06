@@ -5,15 +5,10 @@ package Swing;
  * @Date 2022-11-26-18:53
  */
 
-/**
- * @Author mapKey
- * @Date 2022-11-26-18:48
- */
+
 public class Calculator {
     public StringBuilder downStrBd;
     public StringBuilder upStrBd;
-    //public StringBuilder downStrB = new StringBuilder();
-    //public StringBuilder upStrB = new StringBuilder();
 
     public StringBuilder getDownStrBd() {
         return downStrBd;

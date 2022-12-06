@@ -18,7 +18,7 @@ public class CalcUtilTest {
 
     @org.junit.Test
     public void expressionToValue() {
-        String s = CalcUtil.expressionToValue("123+456*789+1");
+        String s = CalcUtil.expressionToValue("123.2+1.5");
         System.out.println("s = " + s);
     }
 }
