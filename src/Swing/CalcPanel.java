@@ -30,41 +30,37 @@ public class CalcPanel extends JFrame {
         c2_Disp();
 
     }
-
-    private void L_0MouseClicked(MouseEvent e) {
-        addNumber(c1, "0");
-        c1_Disp();
+    public void c1_Disp() {
+        textField1.setText(c1.upStrBd.toString());
+        textField3.setText(c1.downStrBd.toString());
     }
 
-    private void L_1MouseClicked(MouseEvent e) {
-        addNumber(c1, "1");
-        c1_Disp();
+    public void c2_Disp() {
+        textField2.setText(c2.upStrBd.toString());
+        textField4.setText(c2.downStrBd.toString());
     }
 
-    private void L_2MouseClicked(MouseEvent e) {
+    public void addNumber(Calculator c, String s) {
+        if (hasSymbol) {
+            c.upStrBd = new StringBuilder(100);
+        }
+        c.upStrBd.append(s);
+        c.downStrBd.append(s);
 
+        hasSymbol = false;
     }
 
-    private void L_3MouseClicked(MouseEvent e) {
+    public String addSymbol(Calculator c, String s) {
+        if (hasSymbol) {
+            c.downStrBd.deleteCharAt(c.downStrBd.length() - 1);
+        }
 
+        String res = CalcUtil.expressionToValue(c.downStrBd.toString());
+        c.downStrBd.append(s);
+        c.upStrBd = new StringBuilder(res);
+        hasSymbol = true;
+        return res;
     }
-
-    private void L_4MouseClicked(MouseEvent e) {
-
-    }
-
-    private void L_EquMouseClicked(MouseEvent e) {
-        String res = addSymbol(c1, "=");
-        //只有当等于的时候, downStrBd
-        c1.downStrBd.append(res);
-        c1_Disp();
-    }
-
-    private void L_AddMouseClicked(MouseEvent e) {
-        addSymbol(c1, "+");
-        c1_Disp();
-    }
-
     private void DELMouseClicked(MouseEvent e) {
         //重新开辟的方式
         c1.downStrBd = new StringBuilder(100);
@@ -87,38 +83,97 @@ public class CalcPanel extends JFrame {
         c2_Disp();
     }
 
-
-    public void c1_Disp() {
-        textField1.setText(c1.upStrBd.toString());
-        textField3.setText(c1.downStrBd.toString());
+    private void L_0MouseClicked(MouseEvent e) {
+        addNumber(c1, "0");
+        c1_Disp();
     }
 
-    public void c2_Disp() {
-        textField2.setText(c2.upStrBd.toString());
-        textField4.setText(c2.downStrBd.toString());
+    private void L_1MouseClicked(MouseEvent e) {
+        addNumber(c1, "1");
+        c1_Disp();
     }
 
-    public void addNumber(Calculator c, String s) {
-        if (hasSymbol) {
-            c.upStrBd = new StringBuilder(100);
-        }
-        c.upStrBd.append(s);
-        c.downStrBd.append(s);
-
-        hasSymbol = false;
+    private void L_2MouseClicked(MouseEvent e) {
+        addNumber(c1, "2");
+        c1_Disp();
     }
 
+    private void L_3MouseClicked(MouseEvent e) {
+        addNumber(c1, "3");
+        c1_Disp();
+    }
 
-    public String addSymbol(Calculator c, String s) {
-        if (hasSymbol) {
-            c.downStrBd.deleteCharAt(c.downStrBd.length() - 1);
-        }
+    private void L_4MouseClicked(MouseEvent e) {
+        addNumber(c1, "4");
+        c1_Disp();
+    }
+    private void L_5MouseClicked(MouseEvent e) {
+        addNumber(c1, "5");
+        c1_Disp();
+    }
 
-        String res = CalcUtil.expressionToValue(c.downStrBd.toString());
-        c.downStrBd.append(s);
-        c.upStrBd = new StringBuilder(res);
-        hasSymbol = true;
-        return res;
+    private void L_6MouseClicked(MouseEvent e) {
+        addNumber(c1, "6");
+        c1_Disp();
+    }
+
+    private void L_7MouseClicked(MouseEvent e) {
+        addNumber(c1, "7");
+        c1_Disp();
+    }
+
+    private void L_8MouseClicked(MouseEvent e) {
+        addNumber(c1, "8");
+        c1_Disp();
+    }
+
+    private void L_9MouseClicked(MouseEvent e) {
+        addNumber(c1, "9");
+        c1_Disp();
+    }
+
+    private void L_EquMouseClicked(MouseEvent e) {
+        String res = addSymbol(c1, "=");
+        //只有当等于的时候, downStrBd
+        c1.downStrBd.append(res);
+        c1_Disp();
+    }
+
+    private void L_AddMouseClicked(MouseEvent e) {
+        addSymbol(c1, "+");
+        c1_Disp();
+    }
+
+    private void L_SubMouseClicked(MouseEvent e) {
+        addSymbol(c1, "-");
+        c1_Disp();
+    }
+
+    private void L_MulMouseClicked(MouseEvent e) {
+        addSymbol(c1, "*");
+        c1_Disp();
+    }
+
+    private void L_DivMouseClicked(MouseEvent e) {
+        addSymbol(c1, "/");
+        c1_Disp();
+    }
+
+    private void L_ACMouseClicked(MouseEvent e) {
+        // TODO add your code here
+
+    }
+
+    private void L_NOTMouseClicked(MouseEvent e) {
+        // TODO add your code here
+    }
+
+    private void L_PercentMouseClicked(MouseEvent e) {
+        // TODO add your code here
+    }
+
+    private void L_DotMouseClicked(MouseEvent e) {
+        // TODO add your code here
     }
 
     private void initComponents() {
@@ -184,148 +239,196 @@ public class CalcPanel extends JFrame {
             //======== contentPanel ========
             {
                 contentPanel.setLayout(new GridBagLayout());
-                ((GridBagLayout) contentPanel.getLayout()).columnWidths = new int[]{95, 95, 95, 95, 85, 95, 95, 95, 90, 0};
-                ((GridBagLayout) contentPanel.getLayout()).rowHeights = new int[]{105, 15, 65, 85, 85, 85, 85, 80, 0};
-                ((GridBagLayout) contentPanel.getLayout()).columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
-                ((GridBagLayout) contentPanel.getLayout()).rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
+                ((GridBagLayout)contentPanel.getLayout()).columnWidths = new int[] {95, 95, 95, 95, 85, 95, 95, 95, 90, 0};
+                ((GridBagLayout)contentPanel.getLayout()).rowHeights = new int[] {105, 15, 65, 85, 85, 85, 85, 80, 0};
+                ((GridBagLayout)contentPanel.getLayout()).columnWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
+                ((GridBagLayout)contentPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
                 contentPanel.add(textField1, new GridBagConstraints(0, 0, 4, 2, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
                 contentPanel.add(textField2, new GridBagConstraints(5, 0, 4, 2, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 0), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 0), 0, 0));
                 contentPanel.add(textField3, new GridBagConstraints(0, 2, 4, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
                 contentPanel.add(textField4, new GridBagConstraints(5, 2, 4, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 0), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 0), 0, 0));
 
                 //---- L_AC ----
                 L_AC.setText("AC");
                 L_AC.setFont(L_AC.getFont().deriveFont(L_AC.getFont().getStyle() | Font.BOLD, L_AC.getFont().getSize() + 10f));
+                L_AC.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_ACMouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_AC, new GridBagConstraints(0, 3, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_NOT ----
                 L_NOT.setText("+/-");
                 L_NOT.setFont(L_NOT.getFont().deriveFont(L_NOT.getFont().getStyle() | Font.BOLD, L_NOT.getFont().getSize() + 15f));
+                L_NOT.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_NOTMouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_NOT, new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_Percent ----
                 L_Percent.setText("%");
                 L_Percent.setFont(L_Percent.getFont().deriveFont(L_Percent.getFont().getStyle() | Font.BOLD, L_Percent.getFont().getSize() + 15f));
+                L_Percent.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_PercentMouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_Percent, new GridBagConstraints(2, 3, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_Div ----
                 L_Div.setText("\u00f7");
                 L_Div.setFont(L_Div.getFont().deriveFont(L_Div.getFont().getStyle() | Font.BOLD, L_Div.getFont().getSize() + 20f));
+                L_Div.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_DivMouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_Div, new GridBagConstraints(3, 3, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- Switch_L ----
                 Switch_L.setText("\u2190");
                 Switch_L.setFont(Switch_L.getFont().deriveFont(Switch_L.getFont().getStyle() | Font.BOLD, Switch_L.getFont().getSize() + 20f));
                 contentPanel.add(Switch_L, new GridBagConstraints(4, 3, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_AC ----
                 R_AC.setText("AC");
                 R_AC.setFont(R_AC.getFont().deriveFont(R_AC.getFont().getStyle() | Font.BOLD, R_AC.getFont().getSize() + 10f));
                 contentPanel.add(R_AC, new GridBagConstraints(5, 3, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_NOT ----
                 R_NOT.setText("+/-");
                 R_NOT.setFont(R_NOT.getFont().deriveFont(R_NOT.getFont().getStyle() | Font.BOLD, R_NOT.getFont().getSize() + 15f));
                 contentPanel.add(R_NOT, new GridBagConstraints(6, 3, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_Percent ----
                 R_Percent.setText("%");
                 R_Percent.setFont(R_Percent.getFont().deriveFont(R_Percent.getFont().getStyle() | Font.BOLD, R_Percent.getFont().getSize() + 15f));
                 contentPanel.add(R_Percent, new GridBagConstraints(7, 3, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_Div ----
                 R_Div.setText("\u00f7");
                 R_Div.setFont(R_Div.getFont().deriveFont(R_Div.getFont().getStyle() | Font.BOLD, R_Div.getFont().getSize() + 20f));
                 contentPanel.add(R_Div, new GridBagConstraints(8, 3, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 0), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 0), 0, 0));
 
                 //---- L_7 ----
                 L_7.setText("7");
                 L_7.setFont(L_7.getFont().deriveFont(L_7.getFont().getSize() + 10f));
+                L_7.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_7MouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_7, new GridBagConstraints(0, 4, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_8 ----
                 L_8.setText("8");
                 L_8.setFont(L_8.getFont().deriveFont(L_8.getFont().getSize() + 10f));
+                L_8.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_8MouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_8, new GridBagConstraints(1, 4, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_9 ----
                 L_9.setText("9");
                 L_9.setFont(L_9.getFont().deriveFont(L_9.getFont().getSize() + 10f));
+                L_9.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_9MouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_9, new GridBagConstraints(2, 4, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_Mul ----
                 L_Mul.setText("\u00d7");
                 L_Mul.setFont(L_Mul.getFont().deriveFont(L_Mul.getFont().getStyle() | Font.BOLD, L_Mul.getFont().getSize() + 20f));
+                L_Mul.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_MulMouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_Mul, new GridBagConstraints(3, 4, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- Switch_R ----
                 Switch_R.setText("\u2192");
                 Switch_R.setFont(Switch_R.getFont().deriveFont(Switch_R.getFont().getStyle() | Font.BOLD, Switch_R.getFont().getSize() + 20f));
                 contentPanel.add(Switch_R, new GridBagConstraints(4, 4, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_7 ----
                 R_7.setText("7");
                 R_7.setFont(R_7.getFont().deriveFont(R_7.getFont().getSize() + 10f));
                 contentPanel.add(R_7, new GridBagConstraints(5, 4, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_8 ----
                 R_8.setText("8");
                 R_8.setFont(R_8.getFont().deriveFont(R_8.getFont().getSize() + 10f));
                 contentPanel.add(R_8, new GridBagConstraints(6, 4, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_9 ----
                 R_9.setText("9");
                 R_9.setFont(R_9.getFont().deriveFont(R_9.getFont().getSize() + 10f));
                 contentPanel.add(R_9, new GridBagConstraints(7, 4, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_Mul ----
                 R_Mul.setText("\u00d7");
                 R_Mul.setFont(R_Mul.getFont().deriveFont(R_Mul.getFont().getStyle() | Font.BOLD, R_Mul.getFont().getSize() + 20f));
                 contentPanel.add(R_Mul, new GridBagConstraints(8, 4, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 0), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 0), 0, 0));
 
                 //---- L_4 ----
                 L_4.setText("4");
@@ -337,57 +440,75 @@ public class CalcPanel extends JFrame {
                     }
                 });
                 contentPanel.add(L_4, new GridBagConstraints(0, 5, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_5 ----
                 L_5.setText("5");
                 L_5.setFont(L_5.getFont().deriveFont(L_5.getFont().getSize() + 10f));
+                L_5.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_5MouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_5, new GridBagConstraints(1, 5, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_6 ----
                 L_6.setText("6");
                 L_6.setFont(L_6.getFont().deriveFont(L_6.getFont().getSize() + 10f));
+                L_6.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_6MouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_6, new GridBagConstraints(2, 5, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_Sub ----
                 L_Sub.setText("-");
                 L_Sub.setFont(L_Sub.getFont().deriveFont(L_Sub.getFont().getStyle() | Font.BOLD, L_Sub.getFont().getSize() + 20f));
+                L_Sub.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_SubMouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_Sub, new GridBagConstraints(3, 5, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_4 ----
                 R_4.setText("4");
                 R_4.setFont(R_4.getFont().deriveFont(R_4.getFont().getSize() + 10f));
                 contentPanel.add(R_4, new GridBagConstraints(5, 5, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_5 ----
                 R_5.setText("5");
                 R_5.setFont(R_5.getFont().deriveFont(R_5.getFont().getSize() + 10f));
                 contentPanel.add(R_5, new GridBagConstraints(6, 5, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_6 ----
                 R_6.setText("6");
                 R_6.setFont(R_6.getFont().deriveFont(R_6.getFont().getSize() + 10f));
                 contentPanel.add(R_6, new GridBagConstraints(7, 5, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_Sub ----
                 R_Sub.setText("-");
                 R_Sub.setFont(R_Sub.getFont().deriveFont(R_Sub.getFont().getStyle() | Font.BOLD, R_Sub.getFont().getSize() + 20f));
                 contentPanel.add(R_Sub, new GridBagConstraints(8, 5, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 0), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 0), 0, 0));
 
                 //---- L_1 ----
                 L_1.setText("1");
@@ -399,8 +520,8 @@ public class CalcPanel extends JFrame {
                     }
                 });
                 contentPanel.add(L_1, new GridBagConstraints(0, 6, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_2 ----
                 L_2.setText("2");
@@ -412,8 +533,8 @@ public class CalcPanel extends JFrame {
                     }
                 });
                 contentPanel.add(L_2, new GridBagConstraints(1, 6, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_3 ----
                 L_3.setText("3");
@@ -425,8 +546,8 @@ public class CalcPanel extends JFrame {
                     }
                 });
                 contentPanel.add(L_3, new GridBagConstraints(2, 6, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- L_Add ----
                 L_Add.setText("+");
@@ -438,36 +559,36 @@ public class CalcPanel extends JFrame {
                     }
                 });
                 contentPanel.add(L_Add, new GridBagConstraints(3, 6, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_1 ----
                 R_1.setText("1");
                 R_1.setFont(R_1.getFont().deriveFont(R_1.getFont().getSize() + 10f));
                 contentPanel.add(R_1, new GridBagConstraints(5, 6, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_2 ----
                 R_2.setText("2");
                 R_2.setFont(R_2.getFont().deriveFont(R_2.getFont().getSize() + 10f));
                 contentPanel.add(R_2, new GridBagConstraints(6, 6, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_3 ----
                 R_3.setText("3");
                 R_3.setFont(R_3.getFont().deriveFont(R_3.getFont().getSize() + 10f));
                 contentPanel.add(R_3, new GridBagConstraints(7, 6, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 5), 0, 0));
 
                 //---- R_Add ----
                 R_Add.setText("+");
                 R_Add.setFont(R_Add.getFont().deriveFont(R_Add.getFont().getStyle() | Font.BOLD, R_Add.getFont().getSize() + 20f));
                 contentPanel.add(R_Add, new GridBagConstraints(8, 6, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 5, 0), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 5, 0), 0, 0));
 
                 //---- L_0 ----
                 L_0.setText("0");
@@ -479,15 +600,21 @@ public class CalcPanel extends JFrame {
                     }
                 });
                 contentPanel.add(L_0, new GridBagConstraints(0, 7, 2, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 0, 5), 0, 0));
 
                 //---- L_Dot ----
                 L_Dot.setText(".");
                 L_Dot.setFont(L_Dot.getFont().deriveFont(L_Dot.getFont().getStyle() | Font.BOLD, L_Dot.getFont().getSize() + 20f));
+                L_Dot.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        L_DotMouseClicked(e);
+                    }
+                });
                 contentPanel.add(L_Dot, new GridBagConstraints(2, 7, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 0, 5), 0, 0));
 
                 //---- L_Equ ----
                 L_Equ.setText("=");
@@ -499,8 +626,8 @@ public class CalcPanel extends JFrame {
                     }
                 });
                 contentPanel.add(L_Equ, new GridBagConstraints(3, 7, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 0, 5), 0, 0));
 
                 //---- DEL ----
                 DEL.setText("DEL");
@@ -512,29 +639,29 @@ public class CalcPanel extends JFrame {
                     }
                 });
                 contentPanel.add(DEL, new GridBagConstraints(4, 7, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 0, 5), 0, 0));
 
                 //---- R_0 ----
                 R_0.setText("0");
                 R_0.setFont(R_0.getFont().deriveFont(R_0.getFont().getStyle() | Font.BOLD, R_0.getFont().getSize() + 10f));
                 contentPanel.add(R_0, new GridBagConstraints(5, 7, 2, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 0, 5), 0, 0));
 
                 //---- R_Dot ----
                 R_Dot.setText(".");
                 R_Dot.setFont(R_Dot.getFont().deriveFont(R_Dot.getFont().getStyle() | Font.BOLD, R_Dot.getFont().getSize() + 20f));
                 contentPanel.add(R_Dot, new GridBagConstraints(7, 7, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 5), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 0, 5), 0, 0));
 
                 //---- R_Equ ----
                 R_Equ.setText("=");
                 R_Equ.setFont(R_Equ.getFont().deriveFont(R_Equ.getFont().getStyle() | Font.BOLD, R_Equ.getFont().getSize() + 20f));
                 contentPanel.add(R_Equ, new GridBagConstraints(8, 7, 1, 1, 0.0, 0.0,
-                        GridBagConstraints.CENTER, GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 0), 0, 0));
+                    GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                    new Insets(0, 0, 0, 0), 0, 0));
             }
             dialogPane.add(contentPanel, BorderLayout.CENTER);
         }
